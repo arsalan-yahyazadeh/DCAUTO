@@ -1,0 +1,2 @@
+[n9k]
+my_switch ansible_host=10.10.20.40 ansible_user=admin ansible_password="RG!_Yw200" ansible_network_os=cisco.nxos.nxos

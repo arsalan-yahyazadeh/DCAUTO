@@ -1,0 +1,16 @@
+---
+- name: MY PLAYBOOK
+  hosts: n9k
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: ENABLE OSPF FEATURE
+      cisco.nxos.nxos_feature:
+        feature: ospf
+
+    - name: CONFIGURE OSPF ROUTER-ID
+      cisco.nxos.nxos_config:
+        lines:
+          - router-id 2.2.2.2
+        parents: router ospf 1

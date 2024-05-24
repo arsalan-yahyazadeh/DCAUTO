@@ -1,0 +1,17 @@
+---
+- name: MY PLAYBOOK
+  hosts: n9k
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+  - name: ASSOCIATE INTERFACES WITH OSPF PROCESS
+    cisco.nxos.nxos_ospf_interfaces:
+      config:
+        - name: "eth1/2"
+          address_family:
+            - afi: ipv4
+              processes:
+                - process_id: "1"
+                  area:
+                    area_id: "0"
